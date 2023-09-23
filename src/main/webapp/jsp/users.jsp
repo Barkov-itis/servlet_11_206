@@ -1,12 +1,7 @@
 <%@ page import="models.User" %>
-<%@ page import="java.util.List" %><%--
-  Created by IntelliJ IDEA.
-  User: tron5
-  Date: 20.09.2023
-  Time: 12:59
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Users</title>
@@ -20,13 +15,17 @@
             <th>NAME</th>
             <th>SURNAME</th>
         </tr>
-        <c:forEach items="${usersForJsp}" var="user">
-            <tr>
-                <td>${user.id}</td>
-                <td>${user.name}</td>
-                <td>${user.surname}</td>
-            </tr>
-        </c:forEach>
+                <%
+                    List<User> users = (List<User>) request.getAttribute("usersForJsp");
+                    for ( int i = 0; i < users.size(); i++) {
+                    %>
+                <tr>
+                    <td> <%=users.get(i).getId()%></td>
+                    <td> <%=users.get(i).getFirstName()%></td>
+                    <td> <%=users.get(i).getSecondName()%></td>
+                    <td> <%=users.get(i).getAge()%></td>
+                </tr>
+                <%}%>
     </table>
 </div>
 </body>
