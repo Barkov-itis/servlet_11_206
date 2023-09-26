@@ -21,9 +21,8 @@
                     %>
                 <tr>
                     <td> <%=users.get(i).getId()%></td>
-                    <td> <%=users.get(i).getFirstName()%></td>
-                    <td> <%=users.get(i).getSecondName()%></td>
-                    <td> <%=users.get(i).getAge()%></td>
+                    <td> <%=users.get(i).getName()%></td>
+                    <td> <%=users.get(i).getSurname()%></td>
                 </tr>
                 <%}%>
     </table>

@@ -103,13 +103,8 @@ public class UsersServlets extends HttpServlet {
 //                "</html>");
 //
 //                writer.write(resultHtml.toString());
-        List result;
-        try {
-            result = usersRepository.findAllByAge(25);
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
-        }
-        System.out.println(result.size());
+        List result = null;
+        result = usersRepository.findAllByAge();
         request.setAttribute("usersForJsp", result);
         request.getRequestDispatcher("/jsp/users.jsp").forward(request, response);
     }

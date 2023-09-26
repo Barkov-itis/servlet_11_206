@@ -9,9 +9,11 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Builder
+
 public class User {
     private Long id;
-    private String firstName;
-    private String secondName;
-    private Integer age;
+    private String name;
+    private String surname;
+    private String login;
+    private String password;
 }
