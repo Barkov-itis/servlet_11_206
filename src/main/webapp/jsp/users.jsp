@@ -15,16 +15,13 @@
             <th>NAME</th>
             <th>SURNAME</th>
         </tr>
-                <%
-                    List<User> users = (List<User>) request.getAttribute("usersForJsp");
-                    for ( int i = 0; i < users.size(); i++) {
-                    %>
-                <tr>
-                    <td> <%=users.get(i).getId()%></td>
-                    <td> <%=users.get(i).getName()%></td>
-                    <td> <%=users.get(i).getSurname()%></td>
-                </tr>
-                <%}%>
+        <c:forEach items="${usersForJsp}" var="user">
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.surname}</td>
+            </tr>
+        </c:forEach>
     </table>
 </div>
 </body>
