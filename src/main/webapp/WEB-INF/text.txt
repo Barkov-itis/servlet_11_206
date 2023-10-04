@@ -1,0 +1,9 @@
+Сервер
+JSESSI/// {XHLRFRIFI4567} atribute {user_id, color, "autenticated"}
+                                                       BOOLEAN TRUE
+
+Браузер 1
+JSESSIONID {XHLRFRIFI4567}
+
+Браузер 2
+JSESSIONID {XHLRFRIFI4JIHBV67}

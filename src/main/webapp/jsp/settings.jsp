@@ -4,7 +4,7 @@
     <title>Settings</title>
 </head>
 <body>
-<h1 style="color: ${cookie.get("color").value}">Hello!</h1>
+<h1 style="color: ${cookie.get("color").value}" >Hello!</h1>
 <div>
     <form action="/settings" method="post">
         <select size="3" name="color">

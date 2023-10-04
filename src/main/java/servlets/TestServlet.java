@@ -1,6 +1,8 @@
 package servlets;
 
 import models.User;
+import repository.UsersRepository;
+import repository.UsersRepositoryJdbcImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
