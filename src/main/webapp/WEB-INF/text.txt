@@ -7,3 +7,24 @@ JSESSIONID {XHLRFRIFI4567}
 
 Браузер 2
 JSESSIONID {XHLRFRIFI4JIHBV67}
+
+
+#BCrypt
+
+$2a$[cost]$[22 character salt][31 character hash]
+
+password
+
+hash = hash(password + salt)
+
+$2a$10$[N9qo8uLOickgx2ZMRZoMye][IjZAgcfl7p92ldGxad68LJZdL17lhWy]
+
+пароль - password
+
+Достается полный хэш пароля
+
+salt - N9qo8uLOickgx2ZMRZoMye
+
+hash - IjZAgcfl7p92ldGxad68LJZdL17lhWy
+
+
