@@ -1,0 +1,9 @@
+POST http://localhost:8080/ajaxUsers
+Content-Type: application/json
+
+{
+  "name": "Ivan2",
+  "surname": "Petrov2",
+  "login": "iavn2@mail.ru",
+  "password": "passwords"
+}

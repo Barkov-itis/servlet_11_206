@@ -39,7 +39,11 @@ public class TestServlet extends HttpServlet {
         SigUpForm form = new SigUpForm();
         form.setFirstName(req.getParameter("firstName"));
 
-        signUpService.signUp(form);
+        try {
+            signUpService.signUp(form);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 //    @Override

@@ -3,10 +3,7 @@ package ru.itis.repository;
 import ru.itis.models.User;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -53,15 +50,16 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     @Override
     public void save(User entity) throws SQLException {
         Connection connection = dataSource.getConnection();
-        Statement statement = connection.createStatement();
-        String sql = SQL_INSERT_INTO_USERS + "('" + entity.getLogin() + "', '" + entity.getPassword() + "', '" + entity.getName() + "', '" +entity.getSurname() + "');";
-        try {
-            statement.executeUpdate(sql);
-        } catch (SQLException e) {
-            throw new IllegalArgumentException(e);
-        }
-        System.out.println(entity.getLogin() + " " + entity.getPassword() + " " + entity.getName() + " " + entity.getSurname());
+        System.out.println(entity.getName());
+        PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT_INTO_USERS + "(?, ?, ?, ?)");
+        preparedStatement.setString(1, entity.getLogin());
+        preparedStatement.setString(2, entity.getPassword());
+        preparedStatement.setString(3, entity.getName());
+        preparedStatement.setString(4, entity.getSurname());
+        preparedStatement.executeUpdate();
 
+        ResultSet generated = preparedStatement.getGeneratedKeys();
+        System.out.println(generated);
     }
 
     @Override
